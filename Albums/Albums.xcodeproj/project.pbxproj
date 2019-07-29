@@ -16,6 +16,8 @@
 		A308749222EE8E8B00385F42 /* AlbumDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308749122EE8E8B00385F42 /* AlbumDetailTableViewController.swift */; };
 		A308749422EE916C00385F42 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308749322EE916C00385F42 /* SongTableViewCell.swift */; };
 		A308749622EE924000385F42 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308749522EE924000385F42 /* Album.swift */; };
+		A308749822EEA05200385F42 /* exampleAlbum.json in Resources */ = {isa = PBXBuildFile; fileRef = A308749722EEA05200385F42 /* exampleAlbum.json */; };
+		A308749A22EEA06400385F42 /* AlbumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308749922EEA06400385F42 /* AlbumController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A308749122EE8E8B00385F42 /* AlbumDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailTableViewController.swift; sourceTree = "<group>"; };
 		A308749322EE916C00385F42 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		A308749522EE924000385F42 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		A308749722EEA05200385F42 /* exampleAlbum.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = exampleAlbum.json; path = ../../exampleAlbum.json; sourceTree = "<group>"; };
+		A308749922EEA06400385F42 /* AlbumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +71,13 @@
 				A308748122EE886700385F42 /* Main.storyboard */,
 				A308749322EE916C00385F42 /* SongTableViewCell.swift */,
 				A308749522EE924000385F42 /* Album.swift */,
+				A308749922EEA06400385F42 /* AlbumController.swift */,
 				A308749122EE8E8B00385F42 /* AlbumDetailTableViewController.swift */,
 				A308748F22EE88F900385F42 /* AlbumsTableViewController.swift */,
 				A308748422EE886900385F42 /* Assets.xcassets */,
 				A308748622EE886900385F42 /* LaunchScreen.storyboard */,
 				A308748922EE886900385F42 /* Info.plist */,
+				A308749722EEA05200385F42 /* exampleAlbum.json */,
 			);
 			path = Albums;
 			sourceTree = "<group>";
@@ -136,6 +142,7 @@
 			files = (
 				A308748822EE886900385F42 /* LaunchScreen.storyboard in Resources */,
 				A308748522EE886900385F42 /* Assets.xcassets in Resources */,
+				A308749822EEA05200385F42 /* exampleAlbum.json in Resources */,
 				A308748322EE886700385F42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +158,7 @@
 				A308749022EE88F900385F42 /* AlbumsTableViewController.swift in Sources */,
 				A308749422EE916C00385F42 /* SongTableViewCell.swift in Sources */,
 				A308749222EE8E8B00385F42 /* AlbumDetailTableViewController.swift in Sources */,
+				A308749A22EEA06400385F42 /* AlbumController.swift in Sources */,
 				A308747E22EE886700385F42 /* AppDelegate.swift in Sources */,
 				A308749622EE924000385F42 /* Album.swift in Sources */,
 			);

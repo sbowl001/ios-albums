@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Album: Decodable {
+struct Album: Codable {
     
     enum Keys: String, CodingKey {
         case artist
@@ -49,10 +49,25 @@ struct Album: Decodable {
         self.id = try container.decode(String.self, forKey: .id)
         self.songs = try container.decode([Songs].self, forKey: .songs)
     }
+    
+    func encode(with encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Keys.self)
+        try container.encode(self.artist, forKey: .artist)
+        try container.encode(genres, forKey: .genres)
+        try container.encode(self.id, forKey: .id)
+        try container.encode(songs, forKey: .songs)
+        
+        var coverArtContainer = container.nestedUnkeyedContainer(forKey: .coverArt)
+        for coverArtList in coverArt{
+            var urlContainer = coverArtContainer.nestedContainer(keyedBy: Keys.CoverArtCodingKeys.self)
+            try urlContainer.encode(coverArtList, forKey: .url)
+        }
+        
+    }
 }
 
 
-struct Songs: Decodable {
+struct Songs: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -82,7 +97,20 @@ struct Songs: Decodable {
         self.songName = songTitle
         let durationContainer = try container.nestedContainer(keyedBy: CodingKeys.DurationCodingKeys.self, forKey: .duration)
         let duration = try durationContainer.decode(String.self, forKey: .duration)
-        self.duration = duration 
+        self.duration = duration
+    }
+    
+    func encode(encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(self.id, forKey: .id)
+        
+        var songNameContainer = container.nestedContainer(keyedBy: CodingKeys.SongTitleCodingKeys.self, forKey: .songName)
+        try songNameContainer.encode(songName, forKey: .title)
+        
+        var durationContainer = container.nestedContainer(keyedBy: CodingKeys.DurationCodingKeys.self, forKey: .duration)
+        try durationContainer.encode(duration, forKey: .duration)
+        
     }
  
 }
