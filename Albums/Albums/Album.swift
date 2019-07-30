@@ -24,16 +24,17 @@ struct Album: Codable {
         }
         
     }
-    
+    var name: String
     var coverArt: [String]
     var artist: String
     var genres: [String]
     var id: String
     var songs: [Songs]
     
-    init(from decoder: Decoder) throws {
+     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
         self.artist = try container.decode(String.self, forKey: .artist)
+        self.name = try container.decode(String.self, forKey: .name)
         
         var coverArtContainer = try container.nestedUnkeyedContainer(forKey: .coverArt)
         var coverArtList: [String] = []
