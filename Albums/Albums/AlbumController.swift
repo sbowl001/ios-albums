@@ -93,7 +93,7 @@ class AlbumController {
         
     }
     
-    func createAlbum(artist: String, coverArt: [String], genres: [String], id: String, name: String, songs: [Songs]) {
+    func createAlbum(artist: String, coverArt: [URL], genres: [String], id: String, name: String, songs: [Songs]) {
         
         let newAlbum = Album(artist: artist, coverArt: coverArt, genres: genres, id: id, name: name, songs: songs)
         //    It should take in the necessary properties as parameters in order to initialize a new Album. Create an Album from the method parameters, then append it to the albums array. Then call the put(album: Album) method so the new Album gets saved to the API.
