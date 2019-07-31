@@ -31,6 +31,15 @@ struct Album: Codable {
     var id: String
     var songs: [Songs]
     
+    init(name: String, coverArt: [URL], artist: String, genres: [String], id: String, songs: [Songs]) {
+        self.name = name
+        self.coverArt = coverArt
+        self.artist = artist
+        self.genres = genres
+        self.id = id
+        self.songs = songs
+    }
+    
      init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
         self.artist = try container.decode(String.self, forKey: .artist)
@@ -85,6 +94,11 @@ struct Songs: Codable {
         enum SongTitleCodingKeys: String, CodingKey{
             case title
         }
+    }
+    init(id: String, duration: String, songName: String) {
+        self.id = id
+        self.duration = duration
+        self.songName = songName
     }
     
     var id: String
