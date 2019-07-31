@@ -13,12 +13,37 @@ import Foundation
 class AlbumController {
     
     func testDecodingExampleAlbum() {
-        
+        guard let url = Bundle.main.url(forResource: "exampleAlbum", withExtension: "json") else {
+            NSLog("JSON file doesn't exist")
+            return
+        }
+        do {
+            //Mimicking getting JSON from API
+            let albumData = try Data(contentsOf: url)
+            let album = try JSONDecoder().decode(Album.self, from: albumData)
+
+            print("Success")
+        } catch {
+            NSLog("Error decoding Album: \(error)")
+        }
+
     }
     
     
     func testEncodingExampleAlbum()  {
-        
+        guard let url = Bundle.main.url(forResource: "exampleAlbum", withExtension: "json") else {
+            NSLog("JSON file doesn't exist")
+            return
+        }
+        do {
+            //Mimicking getting JSON from API
+            let albumData = try Data(contentsOf: url)
+            let album = try JSONDecoder().decode(Album.self, from: albumData)
+            
+            print("Success")
+        } catch {
+            NSLog("Error decoding Album: \(error)")
+        }
     }
     
     var albums: [Album] = []
@@ -122,6 +147,8 @@ class AlbumController {
         put(album: updatedAlbum)
         //    A function called update. This should take in an Album and a parameter for each of the Album object's properties that can be changed (This should be every property). Update the values of the Album parameter, then send those changes to the API by calling the put(album: Album) method.
     }
-    
+    func testAlbum()  {
+        
+    }
     
 }
