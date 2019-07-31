@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let albumController = AlbumController()
         albumController.testDecodingExampleAlbum()
         albumController.testEncodingExampleAlbum()
+        
+        
+        let songs = albumController.createSong(songName: "hello", duration: "3")
+       
+        albumController.createAlbum(artist: "hi", coverArt: [URL(string: "https://google.com/")!], genres: ["genres"], id: "rrrr", name: "rr", songs: [songs])
+       
         return true
     }
 
